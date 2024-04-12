@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1e6d4385-4eb0-4622-b531-43e7b6c93aa7" name="Changes" comment="Working program">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_101.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_102.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_103.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_104.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_105.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_106.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_107.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_108.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_109.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_110.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_111.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_112.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_113.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_114.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_115.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_116.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_117.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_118.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_119.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_120.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_121.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_122.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_123.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_124.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_125.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_126.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_127.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_128.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_129.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_130.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_131.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_132.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_133.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_134.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_135.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_136.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_137.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_138.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_139.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_140.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_141.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_142.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_143.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_145.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_146.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_147.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_148.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_149.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_150.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_151.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_152.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_153.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_154.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_155.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_156.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_157.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_158.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_159.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_160.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_161.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_162.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_163.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_164.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_165.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_166.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_167.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_168.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_169.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_170.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_171.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_172.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_173.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_174.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_175.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_176.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_177.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_178.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_179.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_180.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_181.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_182.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_183.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_184.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_185.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_186.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_187.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_188.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_189.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_190.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_191.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_193.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_194.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_195.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_196.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_197.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_198.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_199.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_35.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_37.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_39.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_41.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_42.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_43.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_44.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_45.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_46.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_47.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_49.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_51.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_52.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_53.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_54.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_55.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_56.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_57.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_58.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_59.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_60.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_61.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_62.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_63.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_65.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_66.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_67.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_68.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_69.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_70.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_71.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_72.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_73.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_74.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_75.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_76.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_77.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_78.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_79.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_80.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_81.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_82.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_83.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_84.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_85.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_86.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_87.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_88.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_89.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_90.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_91.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_92.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_93.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_94.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_95.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_96.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_97.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_98.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/cross/Cross_99.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/punkty_początkowe_cross.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/sides/bottom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/sides/front.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/sides/left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/sides/rear.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/sides/right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cube_files/sides/top.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ColorAmount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CubeJOGLRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cubie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/FileOperation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ImageOperations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Listeners.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Neighbours.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SimpleDocumentListener.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
+  </component>
+  <component name="ProjectId" id="2f0HBsTjBqan194hfOkB0HuGSQ9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Repos/Java/springbootlearn002",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.build.tools.auto.reload": "ALL",
+    "settings.editor.selected.configurable": "configurable.group.tools"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Repos\Java\CelluralAutomata\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Repos\Java\CelluralAutomata" />
+      <recent name="C:\Repos\Java\CelluralAutomata\src\main\java" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="CubeJOGLRenderer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CubeJOGLRenderer" />
+      <module name="CelluralAutomata" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CubeJOGLRenderer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1e6d4385-4eb0-4622-b531-43e7b6c93aa7" name="Changes" comment="" />
+      <created>1712930946385</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712930946385</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Working program" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working program" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
