@@ -9,7 +9,10 @@ public class Cubie {
 	private boolean alive;
 	private int oldEnergy;
 	private int newEnergy;
-	
+
+	public Cubie(Color color) {
+		this.id = color;
+	}
 	public Cubie() {
 		this.id = null;
 		this.checkMC = false;
@@ -22,43 +25,55 @@ public class Cubie {
 		return id;
 	}
 
-	public void setId(Color color) {
+	public Cubie setId(Color color) {
 		this.id = color;
-	}
-
-	public Cubie(Color color) {
-		this.id = color;	
+		return this;
 	}
 
 	public boolean isChekMC() {
 		return checkMC;
 	}
 
-	public void setCheckMC(boolean checkMC) {
+	public Cubie setCheckMC(boolean checkMC) {
 		this.checkMC = checkMC;
+		return this;
 	}
 
 	public int getOldEnergy() {
 		return oldEnergy;
 	}
 
-	public void setOldEnergy(int oldEnergy) {
+	public Cubie setOldEnergy(int oldEnergy) {
 		this.oldEnergy = oldEnergy;
+		return this;
 	}
 
 	public int getNewEnergy() {
 		return newEnergy;
 	}
 
-	public void setNewEnergy(int newEnergy) {
+	public Cubie setNewEnergy(int newEnergy) {
 		this.newEnergy = newEnergy;
+		return this;
 	}
 
 	public boolean isAlive() {
 		return alive;
 	}
 
-	public void setAlive(boolean isAlive) {
+	public Cubie setAlive(boolean isAlive) {
 		this.alive = isAlive;
+		return this;
+	}
+
+	@Override
+	public String toString() {
+		return "Cubie{" +
+				"id=" + id +
+				", checkMC=" + checkMC +
+				", alive=" + alive +
+				", oldEnergy=" + oldEnergy +
+				", newEnergy=" + newEnergy +
+				'}';
 	}
 }

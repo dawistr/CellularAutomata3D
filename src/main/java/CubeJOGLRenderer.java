@@ -85,6 +85,8 @@ public class CubeJOGLRenderer  implements GLEventListener {
 	private static JCheckBox chckbxDrawEmptyCubies;
 	
 	public CubeJOGLRenderer(int sizeX,int sizeY,int sizeZ) {
+//		Cube3D cube3D = new Cube3D(10,10,10);
+//		System.out.println(cube3D.getCubie(1,1,1));
 		cube = new Cubie[sizeX][sizeY][sizeZ];
 		cubeTemp = new Cubie[sizeX][sizeY][sizeZ];
 		for(int x=0; x<sizeX; x++) {

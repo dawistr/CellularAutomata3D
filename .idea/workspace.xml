@@ -5,23 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e6d4385-4eb0-4622-b531-43e7b6c93aa7" name="Changes" comment="Working program">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cube3D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Vector3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CubeJOGLRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CubeJOGLRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cubie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cubie.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -81,9 +104,42 @@
       <option name="presentableId" value="Default" />
       <updated>1712930946385</updated>
     </task>
+    <task id="LOCAL-00001" summary="New Classes: Cube3D and Vector3">
+      <created>1712959507784</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1712959507784</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/wip-optimize-code" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -94,7 +150,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="HEAD" />
                       </list>
                     </value>
                   </entry>
@@ -108,7 +164,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Working program" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working program" />
+    <MESSAGE value="New Classes: Cube3D and Vector3" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Classes: Cube3D and Vector3" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
