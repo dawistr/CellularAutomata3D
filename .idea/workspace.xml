@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e6d4385-4eb0-4622-b531-43e7b6c93aa7" name="Changes" comment="Working program">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cube3D.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Vector3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cube3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cube3D.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CubeJOGLRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CubeJOGLRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cubie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cubie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ImageOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ImageOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Neighbours.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Neighbours.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

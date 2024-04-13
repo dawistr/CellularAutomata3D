@@ -162,15 +162,15 @@ public class ImageOperations {
 		return null;
 	}
 
-	public static void saveCubeToTxt(String path, Cubie[][][] cubie) {
+	public static void saveCubeToTxt(String path, Cube3D cube3D) {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(path, true));
-    		for(int x=0; x<cubie.length; x++) {
-    			for (int y=0; y<cubie[0].length; y++) {
-    				for (int z=0; z<cubie[0][0].length; z++) {
-    					if(cubie[x][y][z].getId()!=null)
+    		for(int x=0; x<cube3D.getSizeX(); x++) {
+    			for (int y=0; y<cube3D.getSizeY(); y++) {
+    				for (int z=0; z<cube3D.getSizeZ(); z++) {
+    					if(cube3D.getCubie(x,y,z).getId()!=null)
     					{
-    						bw.append(Integer.toString(x)+"\t"+Integer.toString(y)+"\t"+Integer.toString(z)+"\t"+Integer.toString(cubie[x][y][z].getId().getRGB()));
+    						bw.append(Integer.toString(x)+"\t"+Integer.toString(y)+"\t"+Integer.toString(z)+"\t"+Integer.toString(cube3D.getCubie(x,y,z).getId().getRGB()));
     						bw.newLine();
     					}
     				}
@@ -209,12 +209,12 @@ public class ImageOperations {
 		return lineList;
 	}
     
-	public static void saveCubeCrossImage(Cubie[][][] cubie) {
-		for(int x=0; x<cubie.length; x++) {
-			BufferedImage imageSave = new BufferedImage(cubie[0].length,cubie[0][0].length,BufferedImage.TYPE_INT_RGB);
-			for (int y=0; y<cubie[0].length; y++) {
-				for (int z=0; z<cubie[0][0].length; z++) {
-					imageSave.setRGB((cubie[0].length-1)-y, z, cubie[x][y][z].getId().getRGB());
+	public static void saveCubeCrossImage(Cube3D cube3D) {
+		for(int x=0; x<cube3D.getSizeX(); x++) {
+			BufferedImage imageSave = new BufferedImage(cube3D.getSizeY(),cube3D.getSizeZ(),BufferedImage.TYPE_INT_RGB);
+			for (int y=0; y<cube3D.getSizeY(); y++) {
+				for (int z=0; z<cube3D.getSizeZ(); z++) {
+					imageSave.setRGB((cube3D.getSizeY()-1)-y, z, cube3D.getCubie(x,y,z).getId().getRGB());
 				}
 			}
 		    //write image

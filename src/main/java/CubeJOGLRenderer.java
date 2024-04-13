@@ -49,8 +49,8 @@ public class CubeJOGLRenderer  implements GLEventListener {
 	private static final float CUBIE_GAP_F = 1f; // gap between cubies
 	private static final float CUBIE_TRANSLATION_FACTOR = ONE_F + CUBIE_GAP_F;
 	private GLU glu;
-	private static Cubie[][][] cube;
-	private static Cubie[][][] cubeTemp;
+	private static Cube3D cube3D;
+	private static Cube3D cube3DTemp;
 	private static GL2 gl;
 	private static GLCanvas canvas;
 	
@@ -87,16 +87,16 @@ public class CubeJOGLRenderer  implements GLEventListener {
 	public CubeJOGLRenderer(int sizeX,int sizeY,int sizeZ) {
 //		Cube3D cube3D = new Cube3D(10,10,10);
 //		System.out.println(cube3D.getCubie(1,1,1));
-		cube = new Cubie[sizeX][sizeY][sizeZ];
-		cubeTemp = new Cubie[sizeX][sizeY][sizeZ];
-		for(int x=0; x<sizeX; x++) {
-			for (int y=0; y<sizeY; y++) {
-				for (int z=0; z<sizeZ; z++) {
-					cube[x][y][z] = new Cubie();
-					cubeTemp[x][y][z] = new Cubie();
-				}
-			}
-		}
+		cube3D = new Cube3D(sizeX,sizeY,sizeZ);
+		cube3DTemp = new Cube3D(sizeX,sizeY,sizeZ);
+//		for(int x=0; x<sizeX; x++) {
+//			for (int y=0; y<sizeY; y++) {
+//				for (int z=0; z<sizeZ; z++) {
+//					cube3D.getCubie(x,y,z) = new Cubie();
+//					cube3DTemp.getCubie(x,y,z) = new Cubie();
+//				}
+//			}
+//		}
 	}
 	
 	
@@ -157,15 +157,15 @@ public class CubeJOGLRenderer  implements GLEventListener {
 	
 	
 
-	public static void copyState(Cubie[][][] cube, Cubie[][][] cubeTemp) {
-		for(int x=0; x<cube.length; x++) {
-			for (int y=0; y<cube[0].length; y++) {
-				for (int z=0; z<cube[0][0].length; z++) {
-					cube[x][y][z].setId(cubeTemp[x][y][z].getId());
-					cube[x][y][z].setOldEnergy(cubeTemp[x][y][z].getOldEnergy());
-					cube[x][y][z].setNewEnergy(cubeTemp[x][y][z].getNewEnergy());
-					cube[x][y][z].setCheckMC(cubeTemp[x][y][z].isChekMC());
-					cube[x][y][z].setAlive(cubeTemp[x][y][z].isAlive());
+	public static void copyState(Cube3D cube3D, Cube3D cube3DTemp) {
+		for(int x=0; x<cube3D.getSizeX(); x++) {
+			for (int y=0; y<cube3D.getSizeY(); y++) {
+				for (int z=0; z<cube3D.getSizeZ(); z++) {
+					cube3D.getCubie(x,y,z).setId(cube3DTemp.getCubie(x,y,z).getId());
+					cube3D.getCubie(x,y,z).setOldEnergy(cube3DTemp.getCubie(x,y,z).getOldEnergy());
+					cube3D.getCubie(x,y,z).setNewEnergy(cube3DTemp.getCubie(x,y,z).getNewEnergy());
+					cube3D.getCubie(x,y,z).setCheckMC(cube3DTemp.getCubie(x,y,z).isChekMC());
+					cube3D.getCubie(x,y,z).setAlive(cube3DTemp.getCubie(x,y,z).isAlive());
 				}
 			}
 		}
@@ -173,16 +173,16 @@ public class CubeJOGLRenderer  implements GLEventListener {
 
 	private void drawFullCube(GL2 gl) {	
 		// camera transformations	
-		int lastIdX = cube.length-1;
-		int lastIdY = cube[0].length-1;
-		int lastIdZ = cube[0][0].length-1;
-		for (int x=HIDE_SIDES; x<cube.length; x++) {
-			for (int y=0; y<cube[0].length; y++) {
-				for (int z=0; z<cube[0][0].length; z++) {
+		int lastIdX = cube3D.getSizeX()-1;
+		int lastIdY = cube3D.getSizeY()-1;
+		int lastIdZ = cube3D.getSizeZ()-1;
+		for (int x=HIDE_SIDES; x<cube3D.getSizeX(); x++) {
+			for (int y=0; y<cube3D.getSizeY(); y++) {
+				for (int z=0; z<cube3D.getSizeZ(); z++) {
 					gl.glPushMatrix();
 					// bottom-left-front corner of  is (0,0,0) so we need to center it at the origin
 					gl.glTranslatef((x-lastIdX/2)*CUBIE_TRANSLATION_FACTOR, (y-lastIdY/2)*CUBIE_TRANSLATION_FACTOR, -(z-lastIdZ/2)*CUBIE_TRANSLATION_FACTOR);			
-					drawCubie(gl, cube[x][y][z].getId());
+					drawCubie(gl, cube3D.getCubie(x,y,z).getId());
 					gl.glPopMatrix();
 				}
 			}
@@ -191,78 +191,78 @@ public class CubeJOGLRenderer  implements GLEventListener {
 	
 	private void drawCube(GL2 gl) {	
 		// camera transformations	
-		int lastIdX = cube.length-1;
-		int lastIdY = cube[0].length-1;
-		int lastIdZ = cube[0][0].length-1;
+		int lastIdX = cube3D.getSizeX()-1;
+		int lastIdY = cube3D.getSizeY()-1;
+		int lastIdZ = cube3D.getSizeZ()-1;
 		//left
 		for(int x=HIDE_SIDES; x==HIDE_SIDES; x++) {
-			for (int y=0; y<cube[0].length; y++) {
-				for (int z=0; z<cube[0][0].length; z++) {
+			for (int y=0; y<cube3D.getSizeY(); y++) {
+				for (int z=0; z<cube3D.getSizeZ(); z++) {
 						gl.glPushMatrix();
 						// bottom-left-front corner of  is (0,0,0) so we need to center it at the origin
 						
 						gl.glTranslatef((x-lastIdX/2)*CUBIE_TRANSLATION_FACTOR, (y-lastIdY/2)*CUBIE_TRANSLATION_FACTOR, -(z-lastIdZ/2)*CUBIE_TRANSLATION_FACTOR);			
-						drawCubie(gl, cube[x][y][z].getId(), "left");
+						drawCubie(gl, cube3D.getCubie(x,y,z).getId(), "left");
 						gl.glPopMatrix();			
 				}
 			}
 		}
 		//right
 		for(int x=lastIdX; x==lastIdX; x++) {
-			for (int y=0; y<cube[0].length; y++) {
-				for (int z=0; z<cube[0][0].length; z++) {
+			for (int y=0; y<cube3D.getSizeY(); y++) {
+				for (int z=0; z<cube3D.getSizeZ(); z++) {
 						gl.glPushMatrix();
 						// bottom-left-front corner of  is (0,0,0) so we need to center it at the origin
 						gl.glTranslatef((x-lastIdX/2)*CUBIE_TRANSLATION_FACTOR, (y-lastIdY/2)*CUBIE_TRANSLATION_FACTOR, -(z-lastIdZ/2)*CUBIE_TRANSLATION_FACTOR);			
-						drawCubie(gl, cube[x][y][z].getId(), "right");
+						drawCubie(gl, cube3D.getCubie(x,y,z).getId(), "right");
 						gl.glPopMatrix();			
 				}
 			}
 		}
 		//bottom
-		for (int x=HIDE_SIDES; x<cube.length; x++) {
+		for (int x=HIDE_SIDES; x<cube3D.getSizeX(); x++) {
 			for (int y=0; y==0; y++) {
-				for (int z=0; z<cube[0][0].length; z++) {
+				for (int z=0; z<cube3D.getSizeZ(); z++) {
 						gl.glPushMatrix();
 						// bottom-left-front corner of  is (0,0,0) so we need to center it at the origin
 						gl.glTranslatef((x-lastIdX/2)*CUBIE_TRANSLATION_FACTOR, (y-lastIdY/2)*CUBIE_TRANSLATION_FACTOR, -(z-lastIdZ/2)*CUBIE_TRANSLATION_FACTOR);			
-						drawCubie(gl, cube[x][y][z].getId(), "bottom");
+						drawCubie(gl, cube3D.getCubie(x,y,z).getId(), "bottom");
 						gl.glPopMatrix();					
 				}
 			}
 		}
 		//top
-		for (int x=HIDE_SIDES; x<cube.length; x++) {
+		for (int x=HIDE_SIDES; x<cube3D.getSizeX(); x++) {
 			for (int y=lastIdY; y==lastIdY; y++) {
-				for (int z=0; z<cube[0][0].length; z++) {
+				for (int z=0; z<cube3D.getSizeZ(); z++) {
 						gl.glPushMatrix();
 						// bottom-left-front corner of  is (0,0,0) so we need to center it at the origin
 						gl.glTranslatef((x-lastIdX/2)*CUBIE_TRANSLATION_FACTOR, (y-lastIdY/2)*CUBIE_TRANSLATION_FACTOR, -(z-lastIdZ/2)*CUBIE_TRANSLATION_FACTOR);			
-						drawCubie(gl, cube[x][y][z].getId(), "top");
+						drawCubie(gl, cube3D.getCubie(x,y,z).getId(), "top");
 						gl.glPopMatrix();					
 				}
 			}
 		}
 		//front
-		for (int x=HIDE_SIDES; x<cube.length; x++) {
-			for (int y=0; y<cube[0].length; y++) {
+		for (int x=HIDE_SIDES; x<cube3D.getSizeX(); x++) {
+			for (int y=0; y<cube3D.getSizeY(); y++) {
 				for (int z=0; z==0; z++) {
 						gl.glPushMatrix();
 						// bottom-left-front corner of  is (0,0,0) so we need to center it at the origin
 						gl.glTranslatef((x-lastIdX/2)*CUBIE_TRANSLATION_FACTOR, (y-lastIdY/2)*CUBIE_TRANSLATION_FACTOR, -(z-lastIdZ/2)*CUBIE_TRANSLATION_FACTOR);			
-						drawCubie(gl, cube[x][y][z].getId(), "front");
+						drawCubie(gl, cube3D.getCubie(x,y,z).getId(), "front");
 						gl.glPopMatrix();
 				}
 			}
 		}
 		//rear
-		for (int x=HIDE_SIDES; x<cube.length; x++) {
-			for (int y=0; y<cube[0].length; y++) {
+		for (int x=HIDE_SIDES; x<cube3D.getSizeX(); x++) {
+			for (int y=0; y<cube3D.getSizeY(); y++) {
 				for (int z=lastIdZ; z==lastIdZ; z++) {
 						gl.glPushMatrix();
 						// bottom-left-front corner of  is (0,0,0) so we need to center it at the origin
 						gl.glTranslatef((x-lastIdX/2)*CUBIE_TRANSLATION_FACTOR, (y-lastIdY/2)*CUBIE_TRANSLATION_FACTOR, -(z-lastIdZ/2)*CUBIE_TRANSLATION_FACTOR);			
-						drawCubie(gl, cube[x][y][z].getId(), "rear");
+						drawCubie(gl, cube3D.getCubie(x,y,z).getId(), "rear");
 						gl.glPopMatrix();
 				}
 			}
@@ -364,67 +364,67 @@ public class CubeJOGLRenderer  implements GLEventListener {
 	
 static void setSideColors(Color[][] sideImage, String side)
 {
-	double widthOfCubies = (double)sideImage.length / cube.length;
+	double widthOfCubies = (double)sideImage.length / cube3D.getSizeX();
 	System.out.println("Width:"+sideImage.length+widthOfCubies);
-	double heightOfCubies = (double)sideImage[0].length / cube.length; 
+	double heightOfCubies = (double)sideImage[0].length / cube3D.getSizeX(); 
 	System.out.println("height:"+sideImage[0].length+heightOfCubies);
     if (side == "left") { 
 		int x = 0;
-		for (int y=0; y<cube.length; y++) {
-			for (int z=0; z<cube.length; z++) {
-				Color color = sideImage[(int) (((cube[0].length-1)-y)*widthOfCubies)][(int) (((cube[0][0].length-1)-z)*heightOfCubies)];
-				cube[x][y][z].setId(color);
-				cube[x][y][z].setAlive(true);
+		for (int y=0; y<cube3D.getSizeX(); y++) {
+			for (int z=0; z<cube3D.getSizeX(); z++) {
+				Color color = sideImage[(int) (((cube3D.getSizeY()-1)-y)*widthOfCubies)][(int) (((cube3D.getSizeZ()-1)-z)*heightOfCubies)];
+				cube3D.getCubie(x,y,z).setId(color);
+				cube3D.getCubie(x,y,z).setAlive(true);
 			}
 		}
 	}
 	else if(side == "right") { 
-		int x = cube.length-1;
-		for (int y=0; y<cube.length; y++) {
-			for (int z=0; z<cube.length; z++) {
-				Color color = sideImage[(int) (y*widthOfCubies)+(int) (widthOfCubies/2)][(int) (((cube[0].length-1)-z)*heightOfCubies)+(int) (heightOfCubies/2)];
-				cube[x][y][z].setId(color);
-				cube[x][y][z].setAlive(true);
+		int x = cube3D.getSizeX()-1;
+		for (int y=0; y<cube3D.getSizeX(); y++) {
+			for (int z=0; z<cube3D.getSizeX(); z++) {
+				Color color = sideImage[(int) (y*widthOfCubies)+(int) (widthOfCubies/2)][(int) (((cube3D.getSizeY()-1)-z)*heightOfCubies)+(int) (heightOfCubies/2)];
+				cube3D.getCubie(x,y,z).setId(color);
+				cube3D.getCubie(x,y,z).setAlive(true);
 			}
 		}
 	}
 	else if(side == "bottom") { 
 		int y = 0;
-		for (int x=0; x<cube.length; x++) {
-			for (int z=0; z<cube.length; z++) {
-				Color color = sideImage[(int) (x*widthOfCubies)][(int) (((cube[0][0].length-1)-z)*heightOfCubies)];
-				cube[x][y][z].setId(color);
-				cube[x][y][z].setAlive(true);
+		for (int x=0; x<cube3D.getSizeX(); x++) {
+			for (int z=0; z<cube3D.getSizeX(); z++) {
+				Color color = sideImage[(int) (x*widthOfCubies)][(int) (((cube3D.getSizeZ()-1)-z)*heightOfCubies)];
+				cube3D.getCubie(x,y,z).setId(color);
+				cube3D.getCubie(x,y,z).setAlive(true);
 			}
 		}
 	}
 	else if(side == "top") { 
-		int y = cube.length-1;
-		for (int x=0; x<cube.length; x++) {
-			for (int z=0; z<cube.length; z++) {
+		int y = cube3D.getSizeX()-1;
+		for (int x=0; x<cube3D.getSizeX(); x++) {
+			for (int z=0; z<cube3D.getSizeX(); z++) {
 				Color color = sideImage[(int) (x*widthOfCubies)][(int) (z*heightOfCubies)];
-				cube[x][y][z].setId(color);
-				cube[x][y][z].setAlive(true);
+				cube3D.getCubie(x,y,z).setId(color);
+				cube3D.getCubie(x,y,z).setAlive(true);
 			}
 		}
 	}	
 	else if(side == "front") { 
 		int z = 0;
-		for (int x=0; x<cube.length; x++) {
-			for (int y=0; y<cube.length; y++) {
+		for (int x=0; x<cube3D.getSizeX(); x++) {
+			for (int y=0; y<cube3D.getSizeX(); y++) {
 				Color color = sideImage[(int) (x*widthOfCubies)][(int) (y*heightOfCubies)];
-				cube[x][y][z].setId(color);
-				cube[x][y][z].setAlive(true);
+				cube3D.getCubie(x,y,z).setId(color);
+				cube3D.getCubie(x,y,z).setAlive(true);
 			}
 		}
 	}	
 	else if(side == "rear") { 
-		int z = cube.length-1;
-		for (int x=0; x<cube.length; x++) {
-			for (int y=0; y<cube.length; y++) {
-				Color color = sideImage[(int) (x*widthOfCubies)][(int) (((cube[0].length-1)-y)*heightOfCubies)];
-				cube[x][y][z].setId(color);
-				cube[x][y][z].setAlive(true);
+		int z = cube3D.getSizeX()-1;
+		for (int x=0; x<cube3D.getSizeX(); x++) {
+			for (int y=0; y<cube3D.getSizeX(); y++) {
+				Color color = sideImage[(int) (x*widthOfCubies)][(int) (((cube3D.getSizeY()-1)-y)*heightOfCubies)];
+				cube3D.getCubie(x,y,z).setId(color);
+				cube3D.getCubie(x,y,z).setAlive(true);
 			}
 		}
 	}	
@@ -456,13 +456,13 @@ static void setSideColors(Color[][] sideImage, String side)
 	{
 		for(int i = 0; i<image.size(); i++) {
 			int x = i*(cross+1);
-			double widthOfCubies = (double) image.get(i).length / cube[0].length;  
-			double heightOfCubies = (double) image.get(i)[0].length / cube[0][0].length; 		
-			for (int y=0; y<cube[0].length; y++) {
-				for (int z=0; z<cube[0][0].length; z++) {
-					Color color = image.get(i)[(int) (((cube[0].length-1)-y) * widthOfCubies)][(int) (z * heightOfCubies)];
-					cube[x][y][z].setId(color);
-					cube[x][y][z].setAlive(true);
+			double widthOfCubies = (double) image.get(i).length / cube3D.getSizeY();  
+			double heightOfCubies = (double) image.get(i)[0].length / cube3D.getSizeZ(); 		
+			for (int y=0; y<cube3D.getSizeY(); y++) {
+				for (int z=0; z<cube3D.getSizeZ(); z++) {
+					Color color = image.get(i)[(int) (((cube3D.getSizeY()-1)-y) * widthOfCubies)][(int) (z * heightOfCubies)];
+					cube3D.getCubie(x,y,z).setId(color);
+					cube3D.getCubie(x,y,z).setAlive(true);
 				}
 			}
 		}
@@ -534,10 +534,10 @@ public static void ActionSetSize (){
         animator.start(); 
         btnStart.setEnabled(false);
         btnStop.setEnabled(true);       
-		if(cube.length > cube[0].length)
-			listeners.zoom = -cube.length*3;
+		if(cube3D.getSizeX() > cube3D.getSizeY())
+			listeners.zoom = -cube3D.getSizeX()*3;
 		else
-			listeners.zoom = -cube[0].length*3;    
+			listeners.zoom = -cube3D.getSizeY()*3;    
         listeners.MOVING = true;
 	}
 	
@@ -555,19 +555,19 @@ public static void ActionSetSize (){
 
     
     static void cubieGrowth(int x, int y, int z) {
-    	if (cube[x][y][z].isAlive() == true) {
+    	if (cube3D.getCubie(x,y,z).isAlive() == true) {
     		return; 		
     	}
     	List<ColorAmount> colorAmount = new ArrayList<ColorAmount>();	
     	List<Color> colorList = null;
     	if(comboBoxNeightbours.getSelectedIndex() == 0) {
-    		colorList = Neighbours.mooreNeightbour(cube, x, y, z);
+    		colorList = Neighbours.mooreNeightbour(cube3D, x, y, z);
     	}
     	else if(comboBoxNeightbours.getSelectedIndex() == 1) {
-    		colorList = Neighbours.vonneumanNeightbour(cube, x, y, z);
+    		colorList = Neighbours.vonneumanNeightbour(cube3D, x, y, z);
     	}
     	else if(comboBoxNeightbours.getSelectedIndex() == 2) {
-    		colorList = Neighbours.randomHexagonalNeightbour(cube, x, y, z);
+    		colorList = Neighbours.randomHexagonalNeightbour(cube3D, x, y, z);
     	}
 		for(int i=0; i<colorList.size(); i++) {
 			int indexof = colorAmount.indexOf(new ColorAmount(colorList.get(i)));
@@ -587,35 +587,35 @@ public static void ActionSetSize (){
     			Random rand = new Random();
                 double r = rand.nextDouble();
                 if (r > 0.5) {
-                	cubeTemp[x][y][z].setId(colorAmount.get(colorAmount.size()-1).getColor()); 
-                	cubeTemp[x][y][z].setAlive(true);
+                	cube3DTemp.getCubie(x,y,z).setId(colorAmount.get(colorAmount.size()-1).getColor()); 
+                	cube3DTemp.getCubie(x,y,z).setAlive(true);
                 }
                 else {
-                	cubeTemp[x][y][z].setId(colorAmount.get(colorAmount.size()-2).getColor()); 
-                	cubeTemp[x][y][z].setAlive(true);
+                	cube3DTemp.getCubie(x,y,z).setId(colorAmount.get(colorAmount.size()-2).getColor()); 
+                	cube3DTemp.getCubie(x,y,z).setAlive(true);
                 }
     		}
     		else {
-    			cubeTemp[x][y][z].setId(colorAmount.get(colorAmount.size()-1).getColor()); 
-            	cubeTemp[x][y][z].setAlive(true);
+    			cube3DTemp.getCubie(x,y,z).setId(colorAmount.get(colorAmount.size()-1).getColor()); 
+            	cube3DTemp.getCubie(x,y,z).setAlive(true);
     		}
     	else if(colorAmount.size()==1) {
-    		cubeTemp[x][y][z].setId(colorAmount.get(0).getColor()); 
-        	cubeTemp[x][y][z].setAlive(true);
+    		cube3DTemp.getCubie(x,y,z).setId(colorAmount.get(0).getColor()); 
+        	cube3DTemp.getCubie(x,y,z).setAlive(true);
     	}
     }
     
     static void cubeGrowth(int times) {
     	while(times > 0) {
-	    	copyState(cubeTemp, cube);
-	    	for(int x = 0; x<cube.length; x++)
-				for (int y=0; y<cube[0].length; y++) {
-					for (int z=0; z<cube[0][0].length; z++) {
+	    	copyState(cube3DTemp, cube3D);
+	    	for(int x = 0; x<cube3D.getSizeX(); x++)
+				for (int y=0; y<cube3D.getSizeY(); y++) {
+					for (int z=0; z<cube3D.getSizeZ(); z++) {
 						cubieGrowth(x, y, z);
 				}				
 			}
 	    	times--;
-			copyState(cube, cubeTemp);
+			copyState(cube3D, cube3DTemp);
 			listeners.MOVING = true;
 	    }
     }
@@ -648,63 +648,63 @@ public static void ActionSetSize (){
         } 
         STEPS = text;
 		int steps = 0;
-		copyState(cubeTemp, cube);//kolory komorek zmienimy w tymczasowej kostce
+		copyState(cube3DTemp, cube3D);//kolory komorek zmienimy w tymczasowej kostce
 		while(steps < STEPS) {
     		//stanMc mowi czy dany punkt byl juz wylosowany w danym kroku Monte Carlo
-    		for (int x=0; x<cube.length; x++) {
-    			for (int y=0; y<cube[0].length; y++) {
-    				for (int z=0; z<cube[0][0].length; z++) {
-    					cube[x][y][z].setCheckMC(false);
-    					cube[x][y][z].setOldEnergy(0);
-    					cube[x][y][z].setNewEnergy(0);
+    		for (int x=0; x<cube3D.getSizeX(); x++) {
+    			for (int y=0; y<cube3D.getSizeY(); y++) {
+    				for (int z=0; z<cube3D.getSizeZ(); z++) {
+    					cube3D.getCubie(x,y,z).setCheckMC(false);
+    					cube3D.getCubie(x,y,z).setOldEnergy(0);
+    					cube3D.getCubie(x,y,z).setNewEnergy(0);
     				}
     			}  
     		}	    		
     		//utworzymy liste z kolorow sasiadow, pozwoli nam to na unikniecie losowania kolorow nie uzywanych
     		List<Color> colorList = new ArrayList<Color>();  			    				
 	    	Random rand = new Random();	
-	    	int howMuchToCheck = cube.length * cube[0].length * cube[0][0].length;
+	    	int howMuchToCheck = cube3D.getSizeX() * cube3D.getSizeY() * cube3D.getSizeZ();
 	    	while(howMuchToCheck > 0){
-	            int x = rand.nextInt(cube.length); //losuje x punktu
-	            int y = rand.nextInt(cube[0].length); //losuje y punktu 
-	            int z = rand.nextInt(cube[0][0].length); //losuje z punktu
+	            int x = rand.nextInt(cube3D.getSizeX()); //losuje x punktu
+	            int y = rand.nextInt(cube3D.getSizeY()); //losuje y punktu 
+	            int z = rand.nextInt(cube3D.getSizeZ()); //losuje z punktu
 	            
 	            
 	            //jezeli energia komorki byla juz liczona nie robi tego znowu
-	            if (cube[x][y][z].isChekMC() == false && cube[x][y][z].isAlive() == true) {
+	            if (cube3D.getCubie(x,y,z).isChekMC() == false && cube3D.getCubie(x,y,z).isAlive() == true) {
 	            	colorList.clear();
-	            	colorList = Neighbours.mooreNeightbour(cube, x, y, z);
+	            	colorList = Neighbours.mooreNeightbour(cube3D, x, y, z);
 	            	//losowy kolor wybierany z listy
 	            	if (colorList.size() > 0) {
 	            		Color newColor = colorList.get(rand.nextInt(colorList.size()));
 	            	
-		            	if(cube[x][y][z].getId().getRGB() != newColor.getRGB()) {
+		            	if(cube3D.getCubie(x,y,z).getId().getRGB() != newColor.getRGB()) {
 			            	for(int i = 0; i<colorList.size(); i++)
 		                    {
 		                        //liczenie obecnej energi
-		                        if (colorList.get(i).getRGB() != cube[x][y][z].getId().getRGB()) {
-		                        	int oldEnergy = cube[x][y][z].getOldEnergy();
-		                        	cube[x][y][z].setOldEnergy(oldEnergy+1);			                         
+		                        if (colorList.get(i).getRGB() != cube3D.getCubie(x,y,z).getId().getRGB()) {
+		                        	int oldEnergy = cube3D.getCubie(x,y,z).getOldEnergy();
+		                        	cube3D.getCubie(x,y,z).setOldEnergy(oldEnergy+1);			                         
 		                        }
 		                        //liczenie nowej energi
 		                        if (colorList.get(i).getRGB() != newColor.getRGB()) {
-		                        	int newEnergy = cube[x][y][z].getNewEnergy();
-		                        	cube[x][y][z].setNewEnergy(newEnergy+1);
+		                        	int newEnergy = cube3D.getCubie(x,y,z).getNewEnergy();
+		                        	cube3D.getCubie(x,y,z).setNewEnergy(newEnergy+1);
 		                        }
 		                    }				            	
 			            	//jezeli energia danego ukladu wyszla mniejsza lub rowna przypisujemy nowy kolor
-			            	if (cube[x][y][z].getNewEnergy() <= cube[x][y][z].getOldEnergy())
+			            	if (cube3D.getCubie(x,y,z).getNewEnergy() <= cube3D.getCubie(x,y,z).getOldEnergy())
 		                    {
-		                        cubeTemp[x][y][z].setId(newColor);
+		                        cube3DTemp.getCubie(x,y,z).setId(newColor);
 		                    }
 		            	}
 	            	}	
 	            	howMuchToCheck--;
-		            cube[x][y][z].setCheckMC(true);
+		            cube3D.getCubie(x,y,z).setCheckMC(true);
 	            }              
 	        }
 	    	
-	    	copyState(cube, cubeTemp);	             
+	    	copyState(cube3D, cube3DTemp);
             steps++;
     		DONE_STEPS++;
     		listeners.MOVING = true;
@@ -714,7 +714,7 @@ public static void ActionSetSize (){
     	
 	public static void ActionSaveToTxt() { 
 		String path = ImageOperations.saveLocation();
-		ImageOperations.saveCubeToTxt(path, cube);	
+		ImageOperations.saveCubeToTxt(path, cube3D);
 	}
 	
 	public static void ActionOpenFromTxt() { 
@@ -731,16 +731,16 @@ public static void ActionSetSize (){
         	int y = Integer.parseInt(line[1]);
         	int z = Integer.parseInt(line[2]);
         	Color color = new Color(Integer.parseInt(line[3]), false);
-        	cube[x][y][z].setId(color);
-        	cube[x][y][z].setAlive(true);
+        	cube3D.getCubie(x,y,z).setId(color);
+        	cube3D.getCubie(x,y,z).setAlive(true);
         }
         if( size.length == 4) {
         	int x = Integer.parseInt(size[0]);
         	int y = Integer.parseInt(size[1]);
         	int z = Integer.parseInt(size[2]);
         	Color color = new Color(Integer.parseInt(size[3]), false);
-        	cube[x][y][z].setId(color);
-        	cube[x][y][z].setAlive(true);
+        	cube3D.getCubie(x,y,z).setId(color);
+        	cube3D.getCubie(x,y,z).setAlive(true);
         }
         ActionStop();
         System.out.println("Ustawiono SIZE_OF_CUBE = " + SIZE_OF_CUBE);   
@@ -958,9 +958,9 @@ public static void ActionSetSize (){
 	    			btnGrowth10.setEnabled(true);
 	    			btnGrowth100.setEnabled(true);
 	    			btnSmooth.setEnabled(false);					
-	                sliderHide.setMaximum(cube.length-2);
+	                sliderHide.setMaximum(cube3D.getSizeX()-2);
 	                sliderHide.setValue(HIDE_SIDES);
-	                sliderHide.setMajorTickSpacing((cube.length-2)/4);
+	                sliderHide.setMajorTickSpacing((cube3D.getSizeX()-2)/4);
 	                DONE_STEPS = 0; 
 	                lblStepsDone.setText(Integer.toString(DONE_STEPS));
 				}			
@@ -1080,7 +1080,7 @@ public static void ActionSetSize (){
 			try {
 	          	hide = Integer.parseInt(fieldHide.getText());
 	          } catch (Exception e) {
-	          	JOptionPane.showMessageDialog(panel , "Wpisz liczbę nie większą niż " + (cube.length-2), "Error", JOptionPane.ERROR_MESSAGE);
+	          	JOptionPane.showMessageDialog(panel , "Wpisz liczbę nie większą niż " + (cube3D.getSizeX()-2), "Error", JOptionPane.ERROR_MESSAGE);
 	          	return;
 	          }
 	      	if( hide <= SIZE_OF_CUBE-2) {
@@ -1089,7 +1089,7 @@ public static void ActionSetSize (){
 	      		sliderHide.setValue(HIDE_SIDES);
 	      	}
 	      	else {
-	      		JOptionPane.showMessageDialog(panel, "Wpisz liczbę nie większą niż " + (cube.length-2), "Error", JOptionPane.ERROR_MESSAGE);
+	      		JOptionPane.showMessageDialog(panel, "Wpisz liczbę nie większą niż " + (cube3D.getSizeX()-2), "Error", JOptionPane.ERROR_MESSAGE);
 	      	}
 	      }
 	  });
@@ -1120,7 +1120,7 @@ public static void ActionSetSize (){
 	  btnSaveCross.setVisible(false);
 	  btnSaveCross.addActionListener(new ActionListener() {
 		  public void actionPerformed(ActionEvent e) {
-				ImageOperations.saveCubeCrossImage(cube);
+				ImageOperations.saveCubeCrossImage(cube3D);
 		  }
 	  });
 	  btnSaveCross.setBounds(10, 532, 180, 30);

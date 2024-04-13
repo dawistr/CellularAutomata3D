@@ -6,7 +6,7 @@ import java.util.Random;
 public class Neighbours {
 	static List<Color> listOfNeighbours = new ArrayList<Color>();
 
-	public static List<Color> mooreNeightbour(Cubie[][][] cube, int x, int y, int z) {
+	public static List<Color> mooreNeightbour(Cube3D cube3D, int x, int y, int z) {
 		listOfNeighbours.clear();
     	for (int X=x-1; X<=x+1; X++) {
 			for (int Y=y-1; Y<=y+1; Y++) {
@@ -15,8 +15,8 @@ public class Neighbours {
 						continue;
 		            try {
 		            	//sprawdzamy czy nie jest to pusty kolor
-		            	if (cube[X][Y][Z].isAlive() == true) {
-			            		listOfNeighbours.add(cube[X][Y][Z].getId());					
+		            	if (cube3D.getCubie(x,y,z).isAlive() == true) {
+			            		listOfNeighbours.add(cube3D.getCubie(x,y,z).getId());
 						}
 		            } catch (Exception ex) {
 		            	continue;
@@ -27,37 +27,37 @@ public class Neighbours {
     	return listOfNeighbours;
 	}		
 	
-	public static List<Color> vonneumanNeightbour(Cubie[][][] cube, int x, int y, int z) {
+	public static List<Color> vonneumanNeightbour(Cube3D cube3D, int x, int y, int z) {
 		listOfNeighbours.clear();
         try {
         	//sprawdzamy czy nie jest to pusty kolor
-        	if (cube[x][y][z-1].isAlive() == true)
-            	listOfNeighbours.add(cube[x][y][z-1].getId());
+        	if (cube3D.getCubie(x,y,z-1).isAlive() == true)
+            	listOfNeighbours.add(cube3D.getCubie(x,y,z-1).getId());
         } catch (Exception ex) {}
         try {
-        	if (cube[x][y][z+1].isAlive() == true)
-            	listOfNeighbours.add(cube[x][y][z+1].getId());
+        	if (cube3D.getCubie(x,y,z+1).isAlive() == true)
+            	listOfNeighbours.add(cube3D.getCubie(x,y,z+1).getId());
         } catch (Exception ex) {}
         try {
-        	if (cube[x-1][y][z].isAlive() == true)
-            	listOfNeighbours.add(cube[x-1][y][z].getId());
+        	if (cube3D.getCubie(x-1,y,z).isAlive() == true)
+            	listOfNeighbours.add(cube3D.getCubie(x-1,y,z).getId());
         } catch (Exception ex) {}
         try {
-        	if (cube[x+1][y][z].isAlive() == true)
-            	listOfNeighbours.add(cube[x+1][y][z].getId());
+        	if (cube3D.getCubie(x+1,y,z).isAlive() == true)
+            	listOfNeighbours.add(cube3D.getCubie(x+1,y,z).getId());
         } catch (Exception ex) {}
         try {
-        	if (cube[x][y+1][z].isAlive() == true)
-            	listOfNeighbours.add(cube[x][y+1][z].getId());
+        	if (cube3D.getCubie(x,y+1,z).isAlive() == true)
+            	listOfNeighbours.add(cube3D.getCubie(x,y+1,z).getId());
         } catch (Exception ex) {}
         try {
-        	if (cube[x][y-1][z].isAlive() == true)
-            	listOfNeighbours.add(cube[x][y-1][z].getId());						
+        	if (cube3D.getCubie(x,y-1,z).isAlive() == true)
+            	listOfNeighbours.add(cube3D.getCubie(x,y-1,z).getId());
         } catch (Exception ex) {}
     	return listOfNeighbours;
 	}	
 	
-	public static List<Color> randomHexagonalNeightbour(Cubie[][][] cube, int x, int y, int z) {
+	public static List<Color> randomHexagonalNeightbour(Cube3D cube3D, int x, int y, int z) {
 		listOfNeighbours.clear();
 		Random rand = new Random();
         double rAxis = rand.nextDouble();
@@ -111,8 +111,8 @@ public class Neighbours {
 					}					
 		            try {
 		            	//sprawdzamy czy kom�rka �yje
-		            	if (cube[X][Y][Z].isAlive() == true) {
-			            		listOfNeighbours.add(cube[X][Y][Z].getId());					
+		            	if (cube3D.getCubie(x,y,z).isAlive() == true) {
+			            		listOfNeighbours.add(cube3D.getCubie(x,y,z).getId());
 						}
 		            } catch (Exception ex) {
 		            	continue;
