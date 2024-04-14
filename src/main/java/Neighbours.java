@@ -7,6 +7,7 @@ public class Neighbours {
 	static List<Color> listOfNeighbours = new ArrayList<Color>();
 
 	public static List<Color> mooreNeightbour(Cube3D cube3D, int x, int y, int z) {
+
 		listOfNeighbours.clear();
     	for (int X=x-1; X<=x+1; X++) {
 			for (int Y=y-1; Y<=y+1; Y++) {
@@ -14,9 +15,10 @@ public class Neighbours {
 					if (X==x && Y==y && Z==z)
 						continue;
 		            try {
+						//System.out.println("in moore: "+cube3D.getCubie(X, Y, Z));
 		            	//sprawdzamy czy nie jest to pusty kolor
-		            	if (cube3D.getCubie(x,y,z).isAlive() == true) {
-			            		listOfNeighbours.add(cube3D.getCubie(x,y,z).getId());
+		            	if (cube3D.getCubie(X,Y,X).isAlive() == true) {
+			            		listOfNeighbours.add(cube3D.getCubie(X,Y,Z).getId());
 						}
 		            } catch (Exception ex) {
 		            	continue;
@@ -24,6 +26,7 @@ public class Neighbours {
 				}
 			}	
     	}
+		//System.out.println(listOfNeighbours);
     	return listOfNeighbours;
 	}		
 	
@@ -67,9 +70,9 @@ public class Neighbours {
 				for (int Z=z-1; Z<=z+1; Z++) {
 					if (X==x && Y==y && Z==z)
 						continue;    
-					//wyb�r osi 
+					//wybór osi
 					if (rAxis >= 0.33) {
-						//wyb�r strony
+						//wybór strony
 		                if (rSide >= 0.5) {
 		                	if (Y==y+1 && Z==z-1)
 								continue;

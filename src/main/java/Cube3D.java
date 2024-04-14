@@ -7,6 +7,12 @@ public class Cube3D implements Cloneable{
     private final int sizeZ;
     Cubie[][][] cube3D;
 
+    public Cube3D(){
+        this.sizeX = 10;
+        this.sizeY = 10;
+        this.sizeZ = 10;
+    }
+
     public Cube3D(int sizeX, int sizeY, int sizeZ) {
         this.sizeX = sizeX;
         this.sizeY = sizeY;

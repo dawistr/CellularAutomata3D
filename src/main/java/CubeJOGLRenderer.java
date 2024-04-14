@@ -24,10 +24,12 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import com.google.gson.internal.bind.util.ISO8601Utils;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLCapabilities;
@@ -89,6 +91,12 @@ public class CubeJOGLRenderer  implements GLEventListener {
 //		System.out.println(cube3D.getCubie(1,1,1));
 		cube3D = new Cube3D(sizeX,sizeY,sizeZ);
 		cube3DTemp = new Cube3D(sizeX,sizeY,sizeZ);
+//		System.out.println(cube3D.getCubie(1,1,1));
+//		System.out.println(cube3DTemp.getCubie(1,1,1));
+//		cube3D.getCubie(1,1,1).setOldEnergy(5);
+//		System.out.println(cube3D.getCubie(1,1,1));
+//		copyState(cube3DTemp, cube3D);
+//		System.out.println(cube3DTemp.getCubie(1,2,1));
 //		for(int x=0; x<sizeX; x++) {
 //			for (int y=0; y<sizeY; y++) {
 //				for (int z=0; z<sizeZ; z++) {
@@ -157,15 +165,15 @@ public class CubeJOGLRenderer  implements GLEventListener {
 	
 	
 
-	public static void copyState(Cube3D cube3D, Cube3D cube3DTemp) {
-		for(int x=0; x<cube3D.getSizeX(); x++) {
-			for (int y=0; y<cube3D.getSizeY(); y++) {
-				for (int z=0; z<cube3D.getSizeZ(); z++) {
-					cube3D.getCubie(x,y,z).setId(cube3DTemp.getCubie(x,y,z).getId());
-					cube3D.getCubie(x,y,z).setOldEnergy(cube3DTemp.getCubie(x,y,z).getOldEnergy());
-					cube3D.getCubie(x,y,z).setNewEnergy(cube3DTemp.getCubie(x,y,z).getNewEnergy());
-					cube3D.getCubie(x,y,z).setCheckMC(cube3DTemp.getCubie(x,y,z).isChekMC());
-					cube3D.getCubie(x,y,z).setAlive(cube3DTemp.getCubie(x,y,z).isAlive());
+	public static void copyState(Cube3D destination, Cube3D source) {
+		for(int x=0; x<destination.getSizeX(); x++) {
+			for (int y=0; y<destination.getSizeY(); y++) {
+				for (int z=0; z<destination.getSizeZ(); z++) {
+					destination.getCubie(x,y,z).setId(source.getCubie(x,y,z).getId());
+					destination.getCubie(x,y,z).setOldEnergy(source.getCubie(x,y,z).getOldEnergy());
+					destination.getCubie(x,y,z).setNewEnergy(source.getCubie(x,y,z).getNewEnergy());
+					destination.getCubie(x,y,z).setCheckMC(source.getCubie(x,y,z).isChekMC());
+					destination.getCubie(x,y,z).setAlive(source.getCubie(x,y,z).isAlive());
 				}
 			}
 		}
@@ -373,8 +381,10 @@ static void setSideColors(Color[][] sideImage, String side)
 		for (int y=0; y<cube3D.getSizeX(); y++) {
 			for (int z=0; z<cube3D.getSizeX(); z++) {
 				Color color = sideImage[(int) (((cube3D.getSizeY()-1)-y)*widthOfCubies)][(int) (((cube3D.getSizeZ()-1)-z)*heightOfCubies)];
-				cube3D.getCubie(x,y,z).setId(color);
-				cube3D.getCubie(x,y,z).setAlive(true);
+				cube3D.getCubie(x,y,z)
+						.setId(color)
+						.setAlive(true);
+				//System.out.println(cube3D.getCubie(x,y,z));
 			}
 		}
 	}
@@ -503,7 +513,7 @@ public static void ActionSetSize (){
 	int text = SIZE_OF_CUBE;
     try {
     	text = Integer.parseInt(fieldSize.getText());
-    	if (text >= 10 && text <= 999) {}
+    	if (text >= 3 && text <= 999) {}
     	else
     		throw new Exception();
     } catch (Exception ex) {
@@ -570,6 +580,7 @@ public static void ActionSetSize (){
     		colorList = Neighbours.randomHexagonalNeightbour(cube3D, x, y, z);
     	}
 		for(int i=0; i<colorList.size(); i++) {
+			//System.out.println(colorList.size());
 			int indexof = colorAmount.indexOf(new ColorAmount(colorList.get(i)));
 			if (indexof > -1) {
 				colorAmount.get(indexof).setTimes(colorAmount.get(indexof).getTimes()+1);
@@ -612,13 +623,16 @@ public static void ActionSetSize (){
 				for (int y=0; y<cube3D.getSizeY(); y++) {
 					for (int z=0; z<cube3D.getSizeZ(); z++) {
 						cubieGrowth(x, y, z);
+						//System.out.println(x + " " + " " + y + " " + z);
 				}				
 			}
 	    	times--;
 			copyState(cube3D, cube3DTemp);
 			listeners.MOVING = true;
-	    }
+		}
     }
+
+
     
 
 	public static void ActionGrowth (int times){		
@@ -798,7 +812,7 @@ public static void ActionSetSize (){
 		panelMain.add(lblSize);
 		
 		fieldSize = new JTextField(Integer.toString(SIZE_OF_CUBE));
-		fieldSize.setText("10");
+		fieldSize.setText("3");
 		fieldSize.setBounds(160, 10, 50, 30);
 		panelMain.add(fieldSize);
 		fieldSize.setColumns(10);

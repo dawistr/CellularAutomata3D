@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e6d4385-4eb0-4622-b531-43e7b6c93aa7" name="Changes" comment="Working program">
+    <list default="true" id="1e6d4385-4eb0-4622-b531-43e7b6c93aa7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Cube3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cube3D.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CubeJOGLRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CubeJOGLRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ImageOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ImageOperations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Neighbours.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Neighbours.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712959507784</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Code Upgrades.&#10;cubie growth is bugged">
+      <created>1713014717168</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713014717168</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -165,7 +171,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Working program" />
     <MESSAGE value="New Classes: Cube3D and Vector3" />
-    <option name="LAST_COMMIT_MESSAGE" value="New Classes: Cube3D and Vector3" />
+    <MESSAGE value="Code Upgrades.&#10;cubie growth is bugged" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code Upgrades.&#10;cubie growth is bugged" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
