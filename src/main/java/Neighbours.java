@@ -113,9 +113,9 @@ public class Neighbours {
 		                }		   
 					}					
 		            try {
-		            	//sprawdzamy czy kom�rka �yje
-		            	if (cube3D.getCubie(x,y,z).isAlive() == true) {
-			            		listOfNeighbours.add(cube3D.getCubie(x,y,z).getId());
+		            	//sprawdzamy czy komórka żyje
+		            	if (cube3D.getCubie(X,Y,Z).isAlive() == true) {
+			            		listOfNeighbours.add(cube3D.getCubie(X,Y,Z).getId());
 						}
 		            } catch (Exception ex) {
 		            	continue;

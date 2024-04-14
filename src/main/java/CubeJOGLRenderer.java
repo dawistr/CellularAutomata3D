@@ -87,24 +87,15 @@ public class CubeJOGLRenderer  implements GLEventListener {
 	private static JCheckBox chckbxDrawEmptyCubies;
 	
 	public CubeJOGLRenderer(int sizeX,int sizeY,int sizeZ) {
-//		Cube3D cube3D = new Cube3D(10,10,10);
 //		System.out.println(cube3D.getCubie(1,1,1));
-		cube3D = new Cube3D(sizeX,sizeY,sizeZ);
-		cube3DTemp = new Cube3D(sizeX,sizeY,sizeZ);
+		cube3D = new Cube3D(sizeX, sizeY, sizeZ);
+		cube3DTemp = new Cube3D(sizeX, sizeY, sizeZ);
 //		System.out.println(cube3D.getCubie(1,1,1));
 //		System.out.println(cube3DTemp.getCubie(1,1,1));
 //		cube3D.getCubie(1,1,1).setOldEnergy(5);
 //		System.out.println(cube3D.getCubie(1,1,1));
 //		copyState(cube3DTemp, cube3D);
 //		System.out.println(cube3DTemp.getCubie(1,2,1));
-//		for(int x=0; x<sizeX; x++) {
-//			for (int y=0; y<sizeY; y++) {
-//				for (int z=0; z<sizeZ; z++) {
-//					cube3D.getCubie(x,y,z) = new Cubie();
-//					cube3DTemp.getCubie(x,y,z) = new Cubie();
-//				}
-//			}
-//		}
 	}
 	
 	
@@ -157,27 +148,9 @@ public class CubeJOGLRenderer  implements GLEventListener {
 			listeners.MOVING = false;
 		}		
 	}
-		
-	
-	
+
 	@Override 
 	public void dispose(GLAutoDrawable drawable) { }
-	
-	
-
-	public static void copyState(Cube3D destination, Cube3D source) {
-		for(int x=0; x<destination.getSizeX(); x++) {
-			for (int y=0; y<destination.getSizeY(); y++) {
-				for (int z=0; z<destination.getSizeZ(); z++) {
-					destination.getCubie(x,y,z).setId(source.getCubie(x,y,z).getId());
-					destination.getCubie(x,y,z).setOldEnergy(source.getCubie(x,y,z).getOldEnergy());
-					destination.getCubie(x,y,z).setNewEnergy(source.getCubie(x,y,z).getNewEnergy());
-					destination.getCubie(x,y,z).setCheckMC(source.getCubie(x,y,z).isChekMC());
-					destination.getCubie(x,y,z).setAlive(source.getCubie(x,y,z).isAlive());
-				}
-			}
-		}
-	}	
 
 	private void drawFullCube(GL2 gl) {	
 		// camera transformations	
@@ -208,7 +181,6 @@ public class CubeJOGLRenderer  implements GLEventListener {
 				for (int z=0; z<cube3D.getSizeZ(); z++) {
 						gl.glPushMatrix();
 						// bottom-left-front corner of  is (0,0,0) so we need to center it at the origin
-						
 						gl.glTranslatef((x-lastIdX/2)*CUBIE_TRANSLATION_FACTOR, (y-lastIdY/2)*CUBIE_TRANSLATION_FACTOR, -(z-lastIdZ/2)*CUBIE_TRANSLATION_FACTOR);			
 						drawCubie(gl, cube3D.getCubie(x,y,z).getId(), "left");
 						gl.glPopMatrix();			
@@ -317,49 +289,49 @@ public class CubeJOGLRenderer  implements GLEventListener {
 	}
 }
 	
-	private void drawCubie(GL2 gl, Color color, String side) {
+	private void drawCubie(GL2 gl, Color drawingColor, String cubeSide) {
 		gl.glBegin(GL2.GL_QUADS);
-		if (color == new Cubie().getId())			
+		if (drawingColor == new Cubie().getId())
 			gl.glColor3f(0.5f,0.5f,0.5f);
 		else
-			gl.glColor3f(color.getRed()/255f, color.getGreen()/255f, color.getBlue()/255f);
-		// top side
-		if(side == "top") {
+			gl.glColor3f(drawingColor.getRed()/255f, drawingColor.getGreen()/255f, drawingColor.getBlue()/255f);
+		// top cubeSide
+		if(cubeSide == "top") {
 			gl.glVertex3f(ONE_F, ONE_F, -ONE_F);
 			gl.glVertex3f(-ONE_F, ONE_F, -ONE_F);
 			gl.glVertex3f(-ONE_F, ONE_F, ONE_F);
 			gl.glVertex3f(ONE_F, ONE_F, ONE_F);
 		}
-		// bottom side
-		if(side == "bottom") {
+		// bottom cubeSide
+		if(cubeSide == "bottom") {
 			gl.glVertex3f(ONE_F, -ONE_F, ONE_F);
 			gl.glVertex3f(-ONE_F, -ONE_F, ONE_F);
 			gl.glVertex3f(-ONE_F, -ONE_F, -ONE_F);
 			gl.glVertex3f(ONE_F, -ONE_F, -ONE_F);	 
 		}
-		// front side
-		if(side == "front") {
+		// front cubeSide
+		if(cubeSide == "front") {
 			gl.glVertex3f(ONE_F, ONE_F, ONE_F);
 			gl.glVertex3f(-ONE_F, ONE_F, ONE_F);
 			gl.glVertex3f(-ONE_F, -ONE_F, ONE_F);
 			gl.glVertex3f(ONE_F, -ONE_F, ONE_F);
 		}
-		// rear side
-		if(side == "rear") {
+		// rear cubeSide
+		if(cubeSide == "rear") {
 			gl.glVertex3f(ONE_F, -ONE_F, -ONE_F);
 			gl.glVertex3f(-ONE_F, -ONE_F, -ONE_F);
 			gl.glVertex3f(-ONE_F, ONE_F, -ONE_F);
 			gl.glVertex3f(ONE_F, ONE_F, -ONE_F); 
 		}
-		// left side
-		if(side == "left") {
+		// left cubeSide
+		if(cubeSide == "left") {
 			gl.glVertex3f(-ONE_F, ONE_F, ONE_F);
 			gl.glVertex3f(-ONE_F, ONE_F, -ONE_F);
 			gl.glVertex3f(-ONE_F, -ONE_F, -ONE_F);
 			gl.glVertex3f(-ONE_F, -ONE_F, ONE_F);
 		}
-		// right side
-		if(side == "right") {
+		// right cubeSide
+		if(cubeSide == "right") {
 			gl.glVertex3f(ONE_F, ONE_F, -ONE_F);
 			gl.glVertex3f(ONE_F, ONE_F, ONE_F);
 			gl.glVertex3f(ONE_F, -ONE_F, ONE_F);
@@ -370,13 +342,13 @@ public class CubeJOGLRenderer  implements GLEventListener {
 	
 		
 	
-static void setSideColors(Color[][] sideImage, String side)
+static void setSideColors(Color[][] sideImage, String cubeSide)
 {
 	double widthOfCubies = (double)sideImage.length / cube3D.getSizeX();
 	System.out.println("Width:"+sideImage.length+widthOfCubies);
 	double heightOfCubies = (double)sideImage[0].length / cube3D.getSizeX(); 
 	System.out.println("height:"+sideImage[0].length+heightOfCubies);
-    if (side == "left") { 
+    if (cubeSide == "left") {
 		int x = 0;
 		for (int y=0; y<cube3D.getSizeX(); y++) {
 			for (int z=0; z<cube3D.getSizeX(); z++) {
@@ -388,7 +360,7 @@ static void setSideColors(Color[][] sideImage, String side)
 			}
 		}
 	}
-	else if(side == "right") { 
+	else if(cubeSide == "right") {
 		int x = cube3D.getSizeX()-1;
 		for (int y=0; y<cube3D.getSizeX(); y++) {
 			for (int z=0; z<cube3D.getSizeX(); z++) {
@@ -398,7 +370,7 @@ static void setSideColors(Color[][] sideImage, String side)
 			}
 		}
 	}
-	else if(side == "bottom") { 
+	else if(cubeSide == "bottom") {
 		int y = 0;
 		for (int x=0; x<cube3D.getSizeX(); x++) {
 			for (int z=0; z<cube3D.getSizeX(); z++) {
@@ -408,7 +380,7 @@ static void setSideColors(Color[][] sideImage, String side)
 			}
 		}
 	}
-	else if(side == "top") { 
+	else if(cubeSide == "top") {
 		int y = cube3D.getSizeX()-1;
 		for (int x=0; x<cube3D.getSizeX(); x++) {
 			for (int z=0; z<cube3D.getSizeX(); z++) {
@@ -418,7 +390,7 @@ static void setSideColors(Color[][] sideImage, String side)
 			}
 		}
 	}	
-	else if(side == "front") { 
+	else if(cubeSide == "front") {
 		int z = 0;
 		for (int x=0; x<cube3D.getSizeX(); x++) {
 			for (int y=0; y<cube3D.getSizeX(); y++) {
@@ -428,7 +400,7 @@ static void setSideColors(Color[][] sideImage, String side)
 			}
 		}
 	}	
-	else if(side == "rear") { 
+	else if(cubeSide == "rear") {
 		int z = cube3D.getSizeX()-1;
 		for (int x=0; x<cube3D.getSizeX(); x++) {
 			for (int y=0; y<cube3D.getSizeX(); y++) {
@@ -618,7 +590,8 @@ public static void ActionSetSize (){
     
     static void cubeGrowth(int times) {
     	while(times > 0) {
-	    	copyState(cube3DTemp, cube3D);
+	    	//copyState(cube3DTemp, cube3D);
+			cube3DTemp.copyState(cube3D);
 	    	for(int x = 0; x<cube3D.getSizeX(); x++)
 				for (int y=0; y<cube3D.getSizeY(); y++) {
 					for (int z=0; z<cube3D.getSizeZ(); z++) {
@@ -627,7 +600,8 @@ public static void ActionSetSize (){
 				}				
 			}
 	    	times--;
-			copyState(cube3D, cube3DTemp);
+			//copyState(cube3D, cube3DTemp);
+			cube3D.copyState(cube3DTemp);
 			listeners.MOVING = true;
 		}
     }
@@ -662,7 +636,8 @@ public static void ActionSetSize (){
         } 
         STEPS = text;
 		int steps = 0;
-		copyState(cube3DTemp, cube3D);//kolory komorek zmienimy w tymczasowej kostce
+		//copyState(cube3DTemp, cube3D);//kolory komorek zmienimy w tymczasowej kostce
+		cube3DTemp.copyState(cube3D);
 		while(steps < STEPS) {
     		//stanMc mowi czy dany punkt byl juz wylosowany w danym kroku Monte Carlo
     		for (int x=0; x<cube3D.getSizeX(); x++) {
@@ -718,7 +693,8 @@ public static void ActionSetSize (){
 	            }              
 	        }
 	    	
-	    	copyState(cube3D, cube3DTemp);
+	    	//copyState(cube3D, cube3DTemp);
+			cube3D.copyState(cube3DTemp);
             steps++;
     		DONE_STEPS++;
     		listeners.MOVING = true;

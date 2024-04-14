@@ -117,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713014717168</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Code Upgrades.&#10;bug repair in cubie growth">
+      <created>1713093091723</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1713093091723</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,7 +179,8 @@
     <MESSAGE value="Working program" />
     <MESSAGE value="New Classes: Cube3D and Vector3" />
     <MESSAGE value="Code Upgrades.&#10;cubie growth is bugged" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code Upgrades.&#10;cubie growth is bugged" />
+    <MESSAGE value="Code Upgrades.&#10;bug repair in cubie growth" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code Upgrades.&#10;bug repair in cubie growth" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
